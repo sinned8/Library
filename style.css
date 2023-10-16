@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    
+}
+
+/* Lib header */
+.header{
+    text-align: center;
+    font-size: 25px;
+    box-shadow: 7px 13px 10px -7px rgba(0,0,0,0.32);
+    background-color: #e6e6e6;
+}
+
+/* New book btn */
+
+.newbtn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.newbtn{
+    background-color: #20F06C;
+    text-align: center;
+    border-radius: 10px;
+    border-style: none;
+    color: white;
+    cursor: pointer;
+    height: 50px;
+    width: 130px;
+    opacity: .7;
+    font-size: 20px;
+}
+.newbtn:hover{
+    opacity: 1;
+}
