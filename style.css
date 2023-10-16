@@ -2,8 +2,6 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-    
 }
 
 /* Lib header */
@@ -50,6 +48,7 @@ body{
     background-color: rgba(0, 0, 0, 0.5);
     font-size: 25px;
 }
+/* Form in pop up */
 form{
     margin: 15% auto;
     gap: 10px;
@@ -95,4 +94,55 @@ legend{
     margin-left: 10px;
     margin-right: 10px;
     cursor: pointer;
+}
+
+/* Library container */
+.lib-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    padding: 10px 30px;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    margin-top: 50px;
+}
+
+/* Book & book content */
+
+.book-card{
+    background-color: #bbb0b0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 6px 6px 5px 1px rgba(201,201,201,1);
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.btn-not-read{
+    color: black;
+    background-color: #fa8484;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    border-style: none;
+    border-radius: 10px;
+    height: 45px;
+    width: 100%;
+
+}
+.remove-book-btn{
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    border-style: none;
+    border-radius: 10px;
+    height: 45px;
+    width: 100%;
 }
