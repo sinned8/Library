@@ -18,22 +18,13 @@
     <form class="form" action="script.js">
         <span class="exit">x</span>
         <legend>New book</legend>
-        <div class="input">
-            <p>
-                <input type="text" class="title" name="title" placeholder="Title">
-            </p>
-            <p>
-                <input type="text" class="author" name="author" placeholder="Author">
-            </p>
-            <p>
-                <input type="text" class="pages" name="pages" placeholder="Pages">
-            </p>
-        </div>
+        <input type="text" id="title" class="form" placeholder="Title">
+        <input type="text" id="author" class="form" placeholder="Author">
+        <input type="text" id="pages" class="form" placeholder="Pages">
+        
         <div class="checkbox">
-            <p>
-                <label>Read: </label>
-                <input type="checkbox" class="read" name="read" value="yes">
-            </p>
+            <label>Read: </label>
+            <input type="checkbox" class="read" name="read" value="yes">
         </div>
         <button type="submit" form="form" class="addbttn">Add</button>
     </form>
