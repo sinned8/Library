@@ -39,7 +39,7 @@ body{
 
 /* Add book pop up */
 .pop-up{
-    
+    display: none;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -66,11 +66,12 @@ form>input{
     padding-left: 10px;
     font-weight: 500;
 }
-.exit{
+span{
     color: gray;
     float: right;
     font-size: 15px;
     font-weight: bold;
+    cursor: pointer;
 }
 legend{
     font-weight: 600;
@@ -93,4 +94,5 @@ legend{
     color: white;
     margin-left: 10px;
     margin-right: 10px;
+    cursor: pointer;
 }
