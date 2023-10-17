@@ -45,6 +45,10 @@ class Library{
 }
 const library = new Library()
 
+//UI
+const LibContainer = document.getElementById('lib-container')
+const addBookForm = document.getElementById('add-form')
+
 // Handling and creating book from form input data
 const bookFromInput = () => {
     const title = document.getElementById('title').value
@@ -55,7 +59,8 @@ const bookFromInput = () => {
     return new Book(title, author, pages, isRead)
 
 }
-
+// Function when form is submitted to create new book from input, check if exists
+// and close form
 const addNewBook = (e) => {
     e.preventDefault()
     const newBook = bookFromInput()
@@ -63,6 +68,27 @@ const addNewBook = (e) => {
         alert('Book already exists')
     } else {
         library.addBook(newBook)
-        
+        exitForm()
     }
 }
+const exitForm = () => {
+    addBookForm.reset()
+    popUp.style.display = 'none'
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+addBookForm.onsubmit = addNewBook

@@ -81,7 +81,7 @@ legend{
     font-size: 15px;
     text-align: center;
 }
-.addbttn{
+#submit{
     background-color: #20F06C;
     font-size: 17px;
     font-weight: 600;
@@ -91,13 +91,13 @@ legend{
     margin-top: 22px;
     margin-bottom: 20px;
     color: white;
-    margin-left: 10px;
+    margin-left: 22px;
     margin-right: 10px;
     cursor: pointer;
 }
 
 /* Library container */
-.lib-container{
+#lib-container{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-row-gap: 20px;
@@ -112,7 +112,7 @@ legend{
 
 /* Book & book content */
 
-.book-card{
+#book-card{
     background-color: #bbb0b0;
     display: flex;
     flex-direction: column;
@@ -125,7 +125,17 @@ legend{
     padding: 10px;
     box-sizing: border-box;
 }
-.btn-not-read{
+
+#book-card button{
+    font-size: 20px;
+    height: 45px;
+    width: 70%;
+    border-radius: 10px;
+    border-style: none;
+    margin-bottom: 10px;
+}
+
+/* .btn-not-read{
     color: black;
     background-color: #fa8484;
     margin-bottom: 5px;
@@ -145,4 +155,4 @@ legend{
     border-radius: 10px;
     height: 45px;
     width: 100%;
-}
+} */
