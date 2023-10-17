@@ -1,6 +1,6 @@
 
 
-// Selectors for pop up
+// Selectors for pop up and closing pop up when x is pressed
 const popUp = document.querySelector('.pop-up');
 const closePopUp = document.getElementsByTagName('span')[0];
 closePopUp.addEventListener('click',() => popUp.style.display = 'none')
@@ -45,7 +45,7 @@ class Library{
 }
 const library = new Library()
 
-//UI
+// Additional UI declarations
 const LibContainer = document.getElementById('lib-container')
 const addBookForm = document.getElementById('add-form')
 
@@ -59,7 +59,7 @@ const bookFromInput = () => {
     return new Book(title, author, pages, isRead)
 
 }
-// Function when form is submitted to create new book from input, check if exists
+// Function when form is submitted to create new book from input, check if it exists
 // and close form
 const addNewBook = (e) => {
     e.preventDefault()
@@ -69,13 +69,78 @@ const addNewBook = (e) => {
     } else {
         library.addBook(newBook)
         exitForm()
+        updateLibContainer()
     }
 }
 const exitForm = () => {
     addBookForm.reset()
     popUp.style.display = 'none'
 }
+const resetLibContainer =() => {
+    LibContainer.innerHTML = ''
+}
+const updateLibContainer = () => {
+    resetLibContainer()
+    for( let book of library.books){
+        createBookCard(book)
+    }
+}
 
+
+// Creating book card 
+const createBookCard = (book) => {
+    const bookCard = document.createElement('div')
+    const title = document.createElement('p')
+    const author = document.createElement('p')
+    const pages = document.createElement('p')
+    const changeReadStatus = document.createElement('button')
+    const removeBookBttn = document.createElement('button')
+
+    bookCard.classList.add('book-card')
+    changeReadStatus.classList.add('change-read-status')
+    changeReadStatus.onclick = toggleRead
+    removeBookBttn.classList.add('remove-book')
+    removeBookBttn.onclick = removeBook
+
+    title.textContent = `Title: ${book.title}`
+    author.textContent = `Author: ${book.author}`
+    pages.textContent = `Pages: ${book.pages}`
+    removeBookBttn.textContent = 'Remove'
+
+    if(book.isRead){
+        changeReadStatus.textContent = 'Read'
+        changeReadStatus.style.backgroundColor = '#68f364'
+    }else{
+        changeReadStatus.textContent = 'Not read'
+        changeReadStatus.style.backgroundColor = '#d16767'
+    }
+
+
+    bookCard.appendChild(title)
+    bookCard.appendChild(author)
+    bookCard.appendChild(pages)
+    bookCard.appendChild(changeReadStatus)
+    bookCard.appendChild(removeBookBttn)
+    LibContainer.appendChild(bookCard)
+}
+
+const removeBook = (e) => {
+    const title = e.target.parentNode.parentNode.firstChild.innerHTML.replaceAll(
+        '"',
+        '')
+    library.removeBook(title)
+    updateLibContainer()
+    console.log('remove');
+}
+const toggleRead = (e) => {
+    const title = e.target.parentNode.parentNode.firstChild.innerHTML.replaceAll(
+        '"',
+        '')
+    const book = library.getTitle(title)
+    book.isRead = !book.isRead
+    console.log('read');
+    updateLibContainer()
+}
 
 
 
